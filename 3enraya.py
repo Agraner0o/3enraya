@@ -1,4 +1,4 @@
-CELDAS = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+CELDAS = ['1', '2', '3', '4', '5', '6', '7', '8', '9','10','11','12','13','14','15','16']
 X, O, BLANCO = 'X', 'O', ' '
 
 
@@ -15,7 +15,7 @@ def main():
         movimiento = None
         while not esCeldaValida(tableroJuego, movimiento):
             print('')
-            print('Cuál es el movimiento de {}? (1-9)'.format(jugadorActual))
+            print('Cuál es el movimiento de {}? (1-12)'.format(jugadorActual))
             movimiento = input('> ')
 
         tableroJuego[movimiento] = jugadorActual
@@ -54,13 +54,16 @@ def obtenerTableroVacio():
 def obtenerStrTablero(tablero):
     """Devuelve el tablero formateado como cadena de texto."""
     return '''
-      {}|{}|{}  1 2 3
-      -+-+-
-      {}|{}|{}  4 5 6
-      -+-+-
-      {}|{}|{}  7 8 9'''.format(tablero['1'], tablero['2'], tablero['3'],
-                                tablero['4'], tablero['5'], tablero['6'],
-                                tablero['7'], tablero['8'], tablero['9'])
+      {}|{}|{}|{}  1 2 3 4
+      -+-+-+-      
+      {}|{}|{}|{}  5 6 7 8
+      -+-+-+-
+      {}|{}|{}|{}  9 10 11 12
+      -+-+-+-
+      {}|{}|{}|{}  13 14 15 16'''.format(tablero['1'], tablero['2'], tablero['3'], tablero['4'],
+                                      tablero['5'], tablero['6'], tablero['7'], tablero['8'],
+                                      tablero['9'],tablero['10'],tablero['11'], tablero['12'],
+                                      tablero['13'],tablero['14'],tablero['15'], tablero['16'])
 
 
 def esCeldaValida(tablero, celda):
